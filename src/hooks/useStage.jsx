@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { createStage } from '../gameHelper';
 
 export const useStage = (player, resetPlayer) => {
@@ -10,7 +10,7 @@ export const useStage = (player, resetPlayer) => {
         const updateStage = prevStage => {
             // First flush the stage
             const newStage = prevStage.map(row => 
-                row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell))
+                row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell)),
             );
 
             // Then draw the tetrominio
@@ -19,18 +19,23 @@ export const useStage = (player, resetPlayer) => {
                     if(value !== 0) {
                         newStage[y + player.pos.y][x + player.pos.x] = [
                             value,
-                            `${player.collided ? 'merged' : 'clear'}`
+                            `${player.collided ? 'merged' : 'clear'}`,
                         ];
                     };
                 });
             });
+
+            // Then check if we collided or not.
+            if(player.collided) {
+                resetPlayer();
+            }
 
             return newStage;
         };
 
         setStage(prev => updateStage(prev));
 
-    }, [player]);
+    }, [player, resetPlayer]);
 
     return [stage, setStage];
 };

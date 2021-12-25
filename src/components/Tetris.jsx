@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Display from './Display';
 import Stage from './Stage';
 import StartButton from './StartButton';
-import { createStage } from '../gameHelper';
+import { createStage, checkCollision } from '../gameHelper';
 
 // styled components
 import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
@@ -17,16 +17,42 @@ const Tetris = () => {
     const [dropTime, setDropTime] = useState(null);
     const [gameOver, setGameOver] = useState(false);
     const [player, updatePlayerPos, resetPlayer] = usePlayer();
-    const [stage, setStage] = useStage(player);
+    const [stage, setStage] = useStage(player, resetPlayer);
 
     console.log('Re-render');
+
+    const movePlayer = dir => {
+        if(!checkCollision(player, stage, { x: dir, y: 0 })) {
+            updatePlayerPos({ x: dir, y: 0 });
+        }
+    }
 
     const startGame = () => {
 
         // Reset Everything
         setStage(createStage());
         resetPlayer();
+        setGameOver(false);
 
+    }
+
+    const drop = () => {
+        if(!checkCollision(player, stage, { x: 0, y: 1 })) {
+            updatePlayerPos({ x: 0, y: 1, collided: false });
+        }
+        else {
+            // Game Over
+            if(player.pos.y < 1) {
+                console.log('Game Over');
+                setGameOver(true);
+                setDropTime(null);
+            }
+            updatePlayerPos({ x: 0, y: 0, collided: true });
+        }
+    }
+
+    const dropPlayer = () => {
+        drop();
     }
 
     const move = ({ keyCode }) => {
@@ -44,18 +70,6 @@ const Tetris = () => {
             }
         }
 
-    }
-
-    const movePlayer = dir => {
-        updatePlayerPos({ x: dir, y: 0 });
-    }
-
-    const drop = () => {
-        updatePlayerPos({ x: 0, y: 1, collided: false });
-    }
-
-    const dropPlayer = () => {
-        drop();
     }
 
     return (
