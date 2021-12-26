@@ -19,7 +19,7 @@ export const useStage = (player, resetPlayer) => {
                 }
                 ack.push(row);
                 return ack;
-            }, [])
+            }, []);
         
         const updateStage = prevStage => {
             // First flush the stage
@@ -35,7 +35,7 @@ export const useStage = (player, resetPlayer) => {
                             value,
                             `${player.collided ? 'merged' : 'clear'}`,
                         ];
-                    };
+                    }
                 });
             });
 
@@ -50,7 +50,7 @@ export const useStage = (player, resetPlayer) => {
 
         setStage(prev => updateStage(prev));
 
-    }, [player, resetPlayer]);
+    }, [player.collided, player.pos.x, player.pos.y, player.tetromino, resetPlayer]);
 
     return [stage, setStage, rowsCleared];
 };
