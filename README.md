@@ -1,70 +1,14 @@
-# Getting Started with Create React App
+## TETRIS GAME
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="1430" alt="Screenshot 2021-12-26 at 1 16 05 PM" src="https://user-images.githubusercontent.com/71596140/147402080-06c14496-ba5c-4c45-bc6f-5c8c71876a7f.png">
 
-## Available Scripts
+After Click on Start Button:
 
-In the project directory, you can run:
+<img width="1436" alt="Screenshot 2021-12-26 at 1 16 51 PM" src="https://user-images.githubusercontent.com/71596140/147402098-22fca962-a3f2-4729-88f4-a91a83d43dff.png">
+<img width="1431" alt="Screenshot 2021-12-26 at 1 17 08 PM" src="https://user-images.githubusercontent.com/71596140/147402105-4252405c-ead5-4868-b44e-0ff9de072819.png">
 
-### `npm start`
+Score Update after forming a complete row:
+<img width="1440" alt="Screenshot 2021-12-26 at 1 17 59 PM" src="https://user-images.githubusercontent.com/71596140/147402127-12f916b8-b03f-40c6-9103-b2c2eef9ceb2.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+After collision at top of the board, Game Over!
+<img width="1433" alt="Screenshot 2021-12-26 at 1 21 00 PM" src="https://user-images.githubusercontent.com/71596140/147402202-0f37a565-741a-474c-988c-e37a1c11a9f9.png">
